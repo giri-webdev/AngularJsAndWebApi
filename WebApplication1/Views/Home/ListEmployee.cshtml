@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "List Employee";
+}
+
+@model IEnumerable<string>
+
+<h2>Employee List</h2>
+@if (Model != null)
+{
+<ul>
+@foreach (string employee in Model)
+{<li>
+    <label class="label label-danger">@employee</label>
+    </li>
+}
+    </ul>
+}
+
+
+

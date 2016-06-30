@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "Get Claims";
+}
+
+@using ServiceLayer.Models
+
+@model IEnumerable<ExternalLoginViewModel>
+
+<h2>Claims List</h2>
+@if (Model != null)
+{
+    <ul>
+        @foreach (ExternalLoginViewModel claim in Model)
+        {
+    <li>
+        <h3 class="text-info">@claim.Name</h3>
+        <h3 class="text-info">@claim.Url</h3> 
+        <h3 class="text-info">@claim.State</h3> 
+    </li>
+        }
+    </ul>
+}
+
+
+
