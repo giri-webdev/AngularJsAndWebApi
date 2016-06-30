@@ -13,7 +13,7 @@ namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Values")]
     [Authorize]
-    [EnableCorsAttribute("http://localhost","*","*")]
+    //[EnableCorsAttribute("http://localhost","*","*")]
     public class ValuesController : ApiController
     {
         // GET api/values
