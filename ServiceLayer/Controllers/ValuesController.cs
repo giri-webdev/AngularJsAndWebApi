@@ -7,11 +7,13 @@ using System.Net;
 using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Values")]
     [Authorize]
+    [EnableCorsAttribute("http://localhost","*","*")]
     public class ValuesController : ApiController
     {
         // GET api/values

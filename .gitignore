@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ServiceLayer/obj/Debug
+/WebApplication1/bin
+/WebApplication1/obj/Debug
+/ServiceLayer/bin
+/packages
