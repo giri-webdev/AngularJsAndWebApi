@@ -1,5 +1,4 @@
-﻿using Microsoft.Owin;
-using Owin;
+﻿using Owin;
 
 //[assembly: OwinStartupAttribute(typeof(WebApplication1.Startup))]
 namespace WebApplication1
