@@ -29,11 +29,17 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult Contact()
+        //Odata queries
+        public ActionResult Products()
         {
-            ViewBag.Message = "Your contact page.";
+            //HttpResponseMessage responseMessage = client.GetAsync("api/Values/GetProducts?$filter=Id+gt+3").Result;
+            //HttpResponseMessage responseMessage = client.GetAsync("api/Values/GetProducts?$top=3").Result;
+            //HttpResponseMessage responseMessage = client.GetAsync("api/Values/GetProducts?$orderby=Id+desc").Result;
+            HttpResponseMessage responseMessage = client.GetAsync("api/Values/GetProducts?$select=Id+,+Name").Result;
+            var response = responseMessage.Content.ReadAsStringAsync().Result;
+            var products = JsonConvert.DeserializeObject<List<ProductViewModel>>(response);
 
-            return View();
+            return View(products);
         }
 
         [Authorize]

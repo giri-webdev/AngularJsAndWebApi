@@ -8,6 +8,7 @@ using System.Net.Http;
 using System.Security.Claims;
 using System.Web.Http;
 using System.Web.Http.Cors;
+using System.Web.Http.OData;
 
 namespace ServiceLayer.Controllers
 {
@@ -23,6 +24,14 @@ namespace ServiceLayer.Controllers
         public IEnumerable<string> Get()
         {
             return new string[] { "Giri", "Bala","Ram" };
+        }
+
+        [EnableQuery()]
+        [HttpGet]
+        [Route("GetProducts")]
+        public IQueryable<ProductModel> GetProducts()
+        {
+            return Products().AsQueryable();
         }
 
 
@@ -55,6 +64,20 @@ namespace ServiceLayer.Controllers
                          };
 
             return Ok(claims);
+        }
+
+
+        private List<ProductModel> Products()
+        {
+            List<ProductModel> products = new List<ProductModel>();
+
+            products.Add(new ProductModel { Id = 1, Name = "Apple" });
+            products.Add(new ProductModel { Id = 2, Name = "Orange" });
+            products.Add(new ProductModel { Id = 3, Name = "Grapes" });
+            products.Add(new ProductModel { Id = 4, Name = "Mango" });
+            products.Add(new ProductModel { Id = 5, Name = "Cherry" });
+
+            return products;
         }
     }
 }
