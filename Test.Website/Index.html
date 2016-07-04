@@ -5,9 +5,10 @@
 	<meta charset="utf-8" />
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
+    <script src="Scripts/angular-resource.js"></script>
 </head>
-<body ng-app="routeTest">
-    <div class="container">
+<body ng-app="home">
+    <!--<div class="container">
         <div class="row">
             <div class="col-md-3">
                 <ul class="nav">
@@ -19,7 +20,16 @@
                 <div ng-view></div>
             </div>
         </div>
+    </div>-->
+    <h1>Hello</h1>
+    <div ng-controller="HomeController as home">
+        <ul>
+          <li ng-repeat="p in home.list">
+              <span>{{p.id}}.{{p.name}}</span>
+          </li>
+        </ul>
     </div>
+
     <script src="Scripts/index.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
 </body>

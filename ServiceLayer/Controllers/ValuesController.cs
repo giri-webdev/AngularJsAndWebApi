@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web.Http;
+using System.Web.Http.Cors;
 using System.Web.Http.OData;
 
 namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Values")]
-    [Authorize]
-    //[EnableCorsAttribute("http://localhost","*","*")]
+    //[Authorize]
+    [EnableCorsAttribute("http://localhost:63437","*","*")]
     public class ValuesController : ApiController
     {
         // GET api/values
@@ -25,7 +26,7 @@ namespace ServiceLayer.Controllers
         [EnableQuery()]
         [HttpGet]
         [Route("GetProducts")]
-        public IQueryable<ProductModel> GetProducts()
+        public IQueryable<ProductModel> GetProducts(string name=null)
         {
             return Products().AsQueryable();
         }
@@ -63,6 +64,7 @@ namespace ServiceLayer.Controllers
         }
 
 
+       
         private List<ProductModel> Products()
         {
             List<ProductModel> products = new List<ProductModel>();

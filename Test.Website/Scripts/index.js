@@ -1,4 +1,4 @@
-﻿var routeTest = angular.module('routeTest', ['ngRoute']);
+﻿var routeTest = angular.module('routeTest', ['ngRoute','ngResource']);
 
 routeTest.config(['$routeProvider', function ($routeProvider) {
 
@@ -26,3 +26,23 @@ routeTest.controller('ContactUsController', function ($scope,$routeParams) {
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
 });
+
+
+var home = angular.module('home', ['ngResource']);
+
+home.controller('HomeController', function ($scope,$resource) {
+    var product = this;
+
+        var ds = $resource('http://localhost:55626/api/Values/GetProducts');
+        ds.query({name:'Orange'},function (data) {
+            product.list = data;
+        });
+});
+
+
+
+
+
+
+
+
