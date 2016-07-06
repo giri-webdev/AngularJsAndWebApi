@@ -36,6 +36,8 @@ namespace WebApplication1.Controllers
             return View(products);
         }
 
+       
+
         [Authorize]
         [HttpGet]
         public ActionResult AddUser()

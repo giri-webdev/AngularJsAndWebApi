@@ -32,6 +32,14 @@ namespace ServiceLayer.Controllers
         }
 
 
+        [HttpPost]
+        [Route("AddProduct")]
+        public IHttpActionResult AddProduct(ProductModel product)
+        {
+            return NotFound();
+        }
+
+
         // POST api/values
         public void Post([FromBody]string value)
         {

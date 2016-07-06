@@ -30,13 +30,38 @@ routeTest.controller('ContactUsController', function ($scope,$routeParams) {
 
 var home = angular.module('home', ['ngResource']);
 
-home.controller('HomeController', function ($scope,$resource) {
-    var product = this;
 
+
+home.controller('HomeController', function ($scope,$resource) {
+   
+    var product = this;
         var ds = $resource('http://localhost:55626/api/Values/GetProducts');
         ds.query({name:'Orange'},function (data) {
             product.list = data;
         });
+
+      
+});
+
+var module = angular.module('product', ['ngResource']);
+
+module.controller('ProductController', function ($scope, $resource) {
+ 
+    var p = $resource('http://localhost:55626/api/Values/AddProduct');
+ 
+    $scope.saveProduct = function () {
+        p.save($scope.product, function (data) {
+            alert('Product saved successfully.')
+        },function(response)
+        {
+            alert(response.statusText)
+            if(response.data.exceptionMessage)
+            alert(response.data.exceptionMessage)
+        });
+    };
+
+   
+
 });
 
 
