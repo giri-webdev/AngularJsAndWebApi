@@ -3,25 +3,27 @@
 <head>
     <title></title>
 	<meta charset="utf-8" />
+    <base href="/">  
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-resource.js"></script>
 </head>
-<body ng-app="home">
-    <!--<div class="container">
+<body ng-app="routeTest">
+  
+    <div class="container">
         <div class="row">
             <div class="col-md-3">
                 <ul class="nav">
-                    <li><a href="#About/1">About</a></li>
-                    <li><a href="#ContactUs/2">Contact Us</a></li>
+                    <li><a href="About/1">About</a></li>
+                    <li><a href="ContactUs/2">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col-md-9">
                 <div ng-view></div>
             </div>
         </div>
-    </div>-->
-    <h1>Hello</h1>
+    </div>
+    
     <div ng-controller="HomeController as home">
         <ul>
           <li ng-repeat="p in home.list">

@@ -1,6 +1,6 @@
 ﻿var routeTest = angular.module('routeTest', ['ngRoute','ngResource']);
 
-routeTest.config(['$routeProvider', function ($routeProvider) {
+routeTest.config(['$routeProvider', '$locationProvider', function ($routeProvider,$locationProvider) {
 
     $routeProvider.when('/About/:id', {
         templateUrl: 'Templates/About.html',
@@ -15,6 +15,9 @@ routeTest.config(['$routeProvider', function ($routeProvider) {
         redirectTo:'/About'
     });
 
+    $locationProvider.html5Mode(true);
+
+
 }]);
 
 routeTest.controller('AboutController', function ($scope,$routeParams) {
@@ -28,11 +31,7 @@ routeTest.controller('ContactUsController', function ($scope,$routeParams) {
 });
 
 
-var home = angular.module('home', ['ngResource']);
-
-
-
-home.controller('HomeController', function ($scope,$resource) {
+routeTest.controller('HomeController', function ($scope,$resource) {
    
     var product = this;
         var ds = $resource('http://localhost:55626/api/Values/GetProducts');
