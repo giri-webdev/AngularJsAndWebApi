@@ -1,4 +1,7 @@
-﻿var routeTest = angular.module('routeTest', ['ngRoute','ngResource']);
+﻿var token = null;
+var isValidUser = false;
+//Routing
+var routeTest = angular.module('routeTest', ['ngRoute', 'ngResource']);
 
 routeTest.config(['$routeProvider', '$locationProvider', function ($routeProvider,$locationProvider) {
 
@@ -42,6 +45,8 @@ routeTest.controller('HomeController', function ($scope,$resource) {
       
 });
 
+
+//Add Product
 var module = angular.module('product', ['ngResource']);
 
 module.controller('ProductController', function ($scope, $resource) {
@@ -58,11 +63,79 @@ module.controller('ProductController', function ($scope, $resource) {
             alert(response.data.exceptionMessage)
         });
     };
-
-   
-
 });
 
+
+//Login/Register
+
+var module = angular.module('authenticateUser', ['ngResource']);
+
+module.controller('LoginController', function ($scope, $resource) {
+
+    $scope.userModel = {
+        email:'',
+        password: '',
+        confirmPassword: '',
+        userName:''
+    };
+
+
+    var service = {
+        register:$resource('http://localhost:55626/api/Account/Register',null,{
+        'addUser': {method: 'POST'}
+        }),
+        login: $resource('http://localhost:55626/Token',null,{
+            'validateUser': {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                transformRequest:function(data,headers)
+                {
+                    var str = [];
+                    for (var c in data)
+                        str.push(encodeURIComponent(c) + "=" + encodeURIComponent(data[c]));
+                    return str.join("&");
+                }
+            }
+        }),
+        listProducts: $resource('http://localhost:55626/api/Values/GetProducts',null,{
+            'list': {
+                method: 'Get',
+                headers:{'Authorization':'Bearer '+ token }
+            }
+        })
+
+    };
+
+    $scope.products = null;
+   
+    $scope.register = function () {
+        alert($scope.userModel.email);
+        $scope.userModel.confirmPassword = $scope.userModel.password;
+        service.register.addUser($scope.userModel, function (data) {
+            alert('User registered successfully.');
+        });
+    };
+
+    $scope.login = function () {
+     
+        $scope.userModel.grant_type = 'password';
+        $scope.userModel.userName = $scope.userModel.email;
+        service.login.validateUser($scope.userModel, function (data) {
+            isValidUser = true;
+            token = data.access_token;
+            alert(token);
+            $scope.list();
+        });
+    };
+
+    $scope.list=function()
+    {
+        service.listProducts.list(function (data) {
+            $scope.products = data;
+            alert(data.length);
+        });
+    }
+});
 
 
 
