@@ -21,7 +21,7 @@ namespace ServiceLayer.Controllers
 {
     [Authorize]
     [RoutePrefix("api/Account")]
-    [EnableCorsAttribute("http://localhost:63437", "*", "*")]
+    //[EnableCorsAttribute("http://localhost:63437", "*", "*")]
     public class AccountController : ApiController
     {
         private const string LocalLoginProvider = "Local";

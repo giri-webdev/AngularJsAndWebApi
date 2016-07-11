@@ -70,40 +70,43 @@ module.controller('ProductController', function ($scope, $resource) {
 
 var module = angular.module('authenticateUser', ['ngResource']);
 
-module.controller('LoginController', function ($scope, $resource) {
+module.factory('service', ['$resource', function ($resource) {
+    return {
+        register : $resource('http://localhost:55626/api/Account/Register', null, {
+            'addUser': {
+            method: 'POST'
+}
+        }),
+            login: $resource('http://localhost:55626/Token', null, {
+                'validateUser': {
+                        method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded'
+                },
+                    transformRequest: function (data, headers) {
+                    var str =[];
+                    for (var c in data)
+                        str.push(encodeURIComponent(c) + "=" +encodeURIComponent(data[c]));
+                    return str.join("&");
+                    }
+                    }
+        }),
+            listProducts : $resource('http://localhost:55626/api/Values/GetProducts', null, {
+            'list': {
+                    method: 'Get',
+                headers: { 'Authorization': 'Bearer ' +token }
+                }
+        })
+
+        };
+        }]);
+
+module.controller('LoginController', function ($scope, $resource,service) {
 
     $scope.userModel = {
         email:'',
         password: '',
         confirmPassword: '',
         userName:''
-    };
-
-
-    var service = {
-        register:$resource('http://localhost:55626/api/Account/Register',null,{
-        'addUser': {method: 'POST'}
-        }),
-        login: $resource('http://localhost:55626/Token',null,{
-            'validateUser': {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                transformRequest:function(data,headers)
-                {
-                    var str = [];
-                    for (var c in data)
-                        str.push(encodeURIComponent(c) + "=" + encodeURIComponent(data[c]));
-                    return str.join("&");
-                }
-            }
-        }),
-        listProducts: $resource('http://localhost:55626/api/Values/GetProducts',null,{
-            'list': {
-                method: 'Get',
-                headers:{'Authorization':'Bearer '+ token }
-            }
-        })
-
     };
 
     $scope.products = null;
@@ -130,7 +133,14 @@ module.controller('LoginController', function ($scope, $resource) {
 
     $scope.list=function()
     {
-        service.listProducts.list(function (data) {
+        var ds = $resource('http://localhost:55626/api/Values/GetProducts', null, {
+            'list': {
+                method: 'Get',
+                headers: { 'Authorization': 'Bearer ' + token }
+            }
+        });
+
+        ds.list(function (data) {
             $scope.products = data;
             alert(data.length);
         });
