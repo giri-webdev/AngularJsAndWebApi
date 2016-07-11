@@ -126,7 +126,6 @@ module.controller('LoginController', function ($scope, $resource,service) {
         service.login.validateUser($scope.userModel, function (data) {
             isValidUser = true;
             token = data.access_token;
-            alert(token);
             $scope.list();
         });
     };
@@ -136,13 +135,13 @@ module.controller('LoginController', function ($scope, $resource,service) {
         var ds = $resource('http://localhost:55626/api/Values/GetProducts', null, {
             'list': {
                 method: 'Get',
-                headers: { 'Authorization': 'Bearer ' + token }
+                headers: { 'Authorization': 'Bearer ' + token },
+                isArray: true
             }
         });
 
         ds.list(function (data) {
             $scope.products = data;
-            alert(data.length);
         });
     }
 });

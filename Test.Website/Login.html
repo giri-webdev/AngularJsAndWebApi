@@ -15,7 +15,9 @@
         <button class="btn btn-primary" ng-click="login()">Login</button>
         <button class="btn btn-primary" ng-click="register()">Register</button>
     </div>
-    
+  <ul ng-repeat="p in products">
+      <li>{{p.id}}.{{p.name}}</li>
+  </ul>
     <script src="Scripts/index.js"></script>
 </body>
 </html>
