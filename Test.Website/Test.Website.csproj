@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AddProduct.html" />
+    <Content Include="codes.txt" />
     <Content Include="Login.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\version.json" />
