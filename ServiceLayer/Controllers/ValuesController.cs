@@ -26,9 +26,12 @@ namespace ServiceLayer.Controllers
         [EnableQuery()]
         [HttpGet]
         [Route("GetProducts")]
+        [AllowAnonymous]
         public IQueryable<ProductModel> GetProducts(string name=null)
         {
-            return Products().AsQueryable();
+
+
+           return Products().AsQueryable();
         }
 
 

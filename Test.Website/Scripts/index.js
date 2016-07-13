@@ -5,9 +5,29 @@ var routeTest = angular.module('routeTest', ['ngRoute', 'ngResource']);
 
 routeTest.config(['$routeProvider', '$locationProvider', function ($routeProvider,$locationProvider) {
 
+    /*Get the data from the ajax call before loading the view using
+      resolve property from the routeprovider and promise
+    */
     $routeProvider.when('/About/:id', {
         templateUrl: 'Templates/About.html',
-        controller: 'AboutController'
+        controller: 'AboutController',
+        resolve: {
+            info:function($q,$http)
+            {
+                var deferred = $q.defer();
+
+                $http({ method: 'GET', url: 'http://localhost:55626/api/Values/GetProducts' })
+                    .success(function (data) {
+                        deferred.resolve(data)
+                    })
+                    .error(function (data) {
+                       
+                        deferred.resolve("Error occurred.");
+                    });
+
+                return deferred.promise;
+            }
+        }
     })
     .when('/ContactUs/:id', {
         templateUrl: 'Templates/ContactUs.html',
@@ -23,9 +43,26 @@ routeTest.config(['$routeProvider', '$locationProvider', function ($routeProvide
 
 }]);
 
-routeTest.controller('AboutController', function ($scope,$routeParams) {
+//Show the progress bar while loading the view through routing
+routeTest.run(['$rootScope', function ($root) {
+
+    $root.$on('$routeChangeStart', function () {
+       
+            alert('loading....');
+        
+    });
+    $root.$on('$routeChangeSuccess', function () {
+        alert('done...');
+        
+    });
+}]);
+
+//Get the ajax call data from reslove and promise through 'info' object
+routeTest.controller('AboutController', function ($scope,$routeParams,info) {
     $scope.message = "About Page";
     $scope.index = $routeParams.id;
+    $scope.info = info;
+    alert(info);
 });
 
 routeTest.controller('ContactUsController', function ($scope,$routeParams) {
@@ -70,6 +107,8 @@ module.controller('ProductController', function ($scope, $resource) {
 
 var module = angular.module('authenticateUser', ['ngResource']);
 
+
+//Factory for web api urls
 module.factory('service', ['$resource', function ($resource) {
     return {
         register : $resource('http://localhost:55626/api/Account/Register', null, {
