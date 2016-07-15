@@ -6,13 +6,36 @@
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-resource.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
-<body ng-app="product">
-    <div ng-controller="ProductController">
-        <input type='text' ng-model="product.name"><br />
-        <textarea ng-model="product.Id" required></textarea><br />
-        <button class="btn btn-primary" ng-click="saveProduct()">Save</button>
-    </div>
+<body ng-app="productModule" ng-controller="AddProductController">
+    <h3 class="text-center">Add Product</h3>
+    <form  class="form-horizontal" name="productForm" novalidate role="form">
+      
+        <div class="form-group" ng-class="{'has-error':productForm.name.$invalid && productForm.name.$dirty}">
+            <label for="name" class="col-md-3 control-label">Name</label>
+            <div class="col-md-9">
+                <input type="text"  Style="width:200px;" id="name" name="name" class="form-control" ng-model="product.name" ng-required="true"/>
+                <span class="help-block"  ng-show="productForm.name.$error.required && productForm.name.$dirty">Product name is required</span>
+               
+            </div>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error':productForm.category.$invalid && productForm.category.$dirty}">
+            <label for="category" class="col-md-3 control-label">Name</label>
+            <div class="col-md-9">
+                <select name="category" Style="width:200px;" id="category"  class="form-control" ng-model="product.item"
+                        ng-options="item as item.text for item in categories track by item.id" >
+
+                </select>
+            
+                <span class="help-block" ng-show="productForm.category.$error.required && productForm.category.$dirty">Category is required</span>
+                <br />
+                <button class="btn btn-primary text-center" ng-disabled="productForm.$invalid" ng-click="saveProduct()">Save</button>
+            </div>
+        </div>
+    </form>
+
     <script src="Scripts/index.js"></script>
 </body>
 

@@ -84,13 +84,24 @@ routeTest.controller('HomeController', function ($scope,$resource) {
 
 
 //Add Product
-var module = angular.module('product', ['ngResource']);
+var module = angular.module('productModule', ['ngResource']);
 
-module.controller('ProductController', function ($scope, $resource) {
- 
+module.controller('AddProductController', function ($scope, $resource) {
+    $scope.categories = [{ id: 1, text: 'Fruits' },
+        { id: 2, text: 'Devices' }
+
+    ];
+    $scope.product ={
+        name: 'Apple',
+        item: { id: 2, text: 'Devices' }
+    };
+
+  
     var p = $resource('http://localhost:55626/api/Values/AddProduct');
  
     $scope.saveProduct = function () {
+        console.log($scope.product.item.id);
+        alert($scope.product.item.id);
         p.save($scope.product, function (data) {
             alert('Product saved successfully.')
         },function(response)
