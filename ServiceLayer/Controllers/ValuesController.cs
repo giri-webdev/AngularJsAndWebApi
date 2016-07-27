@@ -10,7 +10,7 @@ using System.Web.Http.OData;
 namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Values")]
-    [Authorize]
+    //[Authorize]
     //[EnableCorsAttribute("http://localhost:63437","*","*")]
     public class ValuesController : ApiController
     {

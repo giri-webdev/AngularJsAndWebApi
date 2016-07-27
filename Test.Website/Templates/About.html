@@ -1,13 +1,12 @@
-﻿<!DOCTYPE html>
-<html>
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-</head>
-<body>
+﻿
+<div>
     <h1>{{index}}.{{message}}</h1>
     <div>
-        {{info}}
+        <ul>
+            <li ng-repeat="p in info">
+                <span>{{p.id}}.{{p.name}}</span>
+            </li>
+        </ul>
     </div>
-</body>
-</html>
+</div>
+

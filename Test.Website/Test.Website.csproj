@@ -66,9 +66,16 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="AddProduct.html" />
+    <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Templates\AddProduct.html" />
     <Content Include="codes.txt" />
-    <Content Include="Login.html" />
+    <Content Include="Javascript\app.js" />
+    <Content Include="Javascript\Controllers\AddProductController.js" />
+    <Content Include="Javascript\Controllers\Controllers.js" />
+    <Content Include="Javascript\Controllers\LoginController.js" />
+    <Content Include="Javascript\Providers\routeprovider.js" />
+    <Content Include="Javascript\Services\apiservice.js" />
+    <Content Include="Templates\Login.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
@@ -865,7 +872,6 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Scripts\index.js" />
     <Content Include="Templates\About.html" />
     <Content Include="Templates\ContactUs.html" />
     <Content Include="Web.config" />

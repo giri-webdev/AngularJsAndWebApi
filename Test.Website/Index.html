@@ -4,18 +4,29 @@
     <title></title>
 	<meta charset="utf-8" />
     <base href="/">  
+    <script src="Scripts/jquery-2.2.0.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
     <script src="Scripts/angular-resource.js"></script>
+    <script src="Javascript/app.js"></script>
+    <script src="Javascript/Providers/routeprovider.js"></script>
+    <script src="Javascript/Services/apiservice.js"></script>
+    <script src="Javascript/Controllers/AddProductController.js"></script>
+    <script src="Javascript/Controllers/Controllers.js"></script>
+    <script src="Javascript/Controllers/LoginController.js"></script>
+    <link href="Content/bootstrap.css" rel="stylesheet" />
 </head>
-<body ng-app="routeTest">
-  
+<body ng-app="angularDemo">
+    <div id="progressBar">
+        <div>Loading...</div>
+    </div>
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <ul class="nav">
-                    <li><a href="About/1">About</a></li>
-                    <li><a href="ContactUs/2">Contact Us</a></li>
+                <ul class="nav nav-pills nav-stacked">
+                    <li><a href="About/1">About(Routing Demo)</a></li>
+                    <li><a href="ContactUs/2">Contact Us(Routing Demo)</a></li>
+                    <li><a href="AddProduct">Add Product(Form Validation)</a></li>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -24,16 +35,6 @@
         </div>
     </div>
     
-    <div ng-controller="HomeController as home">
-        <ul>
-          <li ng-repeat="p in home.list">
-              <span>{{p.id}}.{{p.name}}</span>
-          </li>
-        </ul>
-    </div>
-
-    <script src="Scripts/index.js"></script>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
 </body>
 </html>
 

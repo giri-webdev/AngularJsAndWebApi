@@ -1,15 +1,4 @@
-﻿<!DOCTYPE html>
-<html >
-<head>
-    <title></title>
-	<meta charset="utf-8" />
-    <script src="Scripts/angular.js"></script>
-    <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-resource.js"></script>
-    <link href="Content/bootstrap.css" rel="stylesheet" />
-</head>
-<body ng-app="productModule" ng-controller="AddProductController">
-    <h3 class="text-center">Add Product</h3>
+﻿<h3 class="text-center">Add Product</h3>
     <form  class="form-horizontal" name="productForm" novalidate role="form">
       
         <div class="form-group" ng-class="{'has-error':productForm.name.$invalid && productForm.name.$dirty}">
@@ -35,8 +24,3 @@
             </div>
         </div>
     </form>
-
-    <script src="Scripts/index.js"></script>
-</body>
-
-</html>
