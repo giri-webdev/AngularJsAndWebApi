@@ -1,6 +1,8 @@
 ﻿using System.Web.Http;
 using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
+using ServiceLayer.Filters;
+using System.Web.Http.ExceptionHandling;
 
 namespace ServiceLayer
 {
@@ -13,6 +15,11 @@ namespace ServiceLayer
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
 
+            //Add ExceptionFilter, ExceptionLogger and ExceptionHandler
+            config.Filters.Add(new ExceptionFilter());
+            config.Services.Add(typeof(IExceptionLogger), new LogException());
+            config.Services.Replace(typeof(IExceptionHandler), new ErrorHandler());
+
             //Enable cors
             config.EnableCors();
 
@@ -21,6 +28,7 @@ namespace ServiceLayer
 
             // Web API routes
             config.MapHttpAttributeRoutes();
+
 
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",

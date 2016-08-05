@@ -234,8 +234,12 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\ExceptionDemoController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="CustomAttributes\IdentityAuthorize.cs" />
+    <Compile Include="Filters\ExceptionFilter.cs" />
+    <Compile Include="Filters\ErrorHandler.cs" />
+    <Compile Include="Filters\LogException.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

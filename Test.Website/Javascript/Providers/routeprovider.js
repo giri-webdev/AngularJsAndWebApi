@@ -31,6 +31,11 @@
         templateUrl: 'Templates/AddProduct.html',
         controller:'AddProductController'
     })
+
+    .when('/AngularFilters', {
+        templateUrl: 'Templates/AngularFilters.html',
+        controller:'AngularFilterController'
+    })
     .otherwise(
     {
         redirectTo: '/About'
@@ -45,9 +50,9 @@
 app.run(['$rootScope', function ($root) {
 
     $root.$on('$routeChangeStart', function () {
-        $('#progressBar').show();
+        $('#pIndicator').show();
     });
     $root.$on('$routeChangeSuccess', function () {
-        $('#progressBar').hide();
+        $('#pIndicator').hide();
     });
 }]);

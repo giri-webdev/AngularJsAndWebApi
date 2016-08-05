@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
 using System.Web.Http;
-using System.Web.Http.Cors;
 using System.Web.Http.OData;
 
 namespace ServiceLayer.Controllers

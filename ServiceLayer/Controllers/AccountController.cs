@@ -15,7 +15,6 @@ using Microsoft.Owin.Security.OAuth;
 using ServiceLayer.Models;
 using ServiceLayer.Providers;
 using ServiceLayer.Results;
-using System.Web.Http.Cors;
 
 namespace ServiceLayer.Controllers
 {

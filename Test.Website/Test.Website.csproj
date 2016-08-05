@@ -66,6 +66,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\style.css" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Templates\AddProduct.html" />
     <Content Include="codes.txt" />
@@ -75,6 +76,7 @@
     <Content Include="Javascript\Controllers\LoginController.js" />
     <Content Include="Javascript\Providers\routeprovider.js" />
     <Content Include="Javascript\Services\apiservice.js" />
+    <Content Include="Templates\AngularFilters.html" />
     <Content Include="Templates\Login.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\version.json" />

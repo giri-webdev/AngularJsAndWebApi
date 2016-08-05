@@ -9,3 +9,10 @@ app.controller('ContactUsController', function ($scope, $routeParams) {
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
 });
+
+
+app.controller('AngularFilterController', function ($scope, $routeParams) {
+    $scope.message = "Orange";
+    $scope.date = new Date();
+   
+});
