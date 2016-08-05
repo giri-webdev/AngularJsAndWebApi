@@ -1,2 +1,9 @@
-This project is all about calling an asp.net web api service using angular js with and without bearer token.  
+This project is about 
+
+1. Calling an asp.net web api service using angular js with and without bearer token
+
+2. Handling exceptions in the web api service
+
+3. Creating custom $resource service in angularjs
+
 This  is an open source project.
