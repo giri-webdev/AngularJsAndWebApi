@@ -36,6 +36,12 @@
         templateUrl: 'Templates/AngularFilters.html',
         controller:'AngularFilterController'
     })
+
+    .when('/Login', {
+        templateUrl:'Templates/Login.html',
+        controller:'LoginController'
+    })
+
     .otherwise(
     {
         redirectTo: '/About'

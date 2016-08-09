@@ -9,7 +9,7 @@ using System.Web.Http.OData;
 namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Values")]
-    //[Authorize]
+    [Authorize]
     //[EnableCorsAttribute("http://localhost:63437","*","*")]
     public class ValuesController : ApiController
     {
@@ -25,7 +25,7 @@ namespace ServiceLayer.Controllers
         [EnableQuery()]
         [HttpGet]
         [Route("GetProducts")]
-        [AllowAnonymous]
+        //[AllowAnonymous]
         public IQueryable<ProductModel> GetProducts(string name=null)
         {
 

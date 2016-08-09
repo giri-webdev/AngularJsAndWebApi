@@ -7,7 +7,7 @@
     <script src="Scripts/jquery-2.2.0.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-resource.js"></script>
+    <script src="Scripts/angular-resource.js"></script>    
     <script src="Javascript/app.js"></script>
     <script src="Javascript/Providers/routeprovider.js"></script>
     <script src="Javascript/Services/apiservice.js"></script>
@@ -17,6 +17,19 @@
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
  
+    <style type="text/css">
+        #pIndicator
+        {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -50px;
+    width: 100px;
+    height: 100px;
+}​
+    </style>
+
 </head>
 <body ng-app="angularDemo">
     <div id="pIndicator">
@@ -37,7 +50,7 @@
             </div>
         </div>
     </div>
-    
+    <script src="Javascript/InterceptorDemo.js"></script>
 </body>
 </html>
 

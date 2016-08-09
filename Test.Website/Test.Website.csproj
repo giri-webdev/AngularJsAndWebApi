@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\style.css" />
+    <Content Include="Javascript\InterceptorDemo.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Templates\AddProduct.html" />
     <Content Include="codes.txt" />
