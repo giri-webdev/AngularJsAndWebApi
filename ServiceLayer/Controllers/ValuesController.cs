@@ -2,6 +2,9 @@
 using ServiceLayer.Models;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http;
 using System.Web.Http.OData;
@@ -25,7 +28,7 @@ namespace ServiceLayer.Controllers
         [EnableQuery()]
         [HttpGet]
         [Route("GetProducts")]
-        //[AllowAnonymous]
+        [AllowAnonymous]
         public IQueryable<ProductModel> GetProducts(string name=null)
         {
 
@@ -41,6 +44,16 @@ namespace ServiceLayer.Controllers
             return NotFound();
         }
 
+        [HttpGet]
+        [Route("HtmlContent")]
+        [AllowAnonymous]
+        public HttpResponseMessage HtmlContent()
+        {
+            var response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StringContent("<span style='color:red;'>Hello World</span>");
+            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+            return response;
+        }
 
         // POST api/values
         public void Post([FromBody]string value)

@@ -24,6 +24,11 @@
                 method: 'Get',
                 headers: { 'Authorization': 'Bearer ' + token }
             }
+        }),
+        htmlContent: $resource('http://localhost:55626/api/Values/HtmlContent', null, {
+            'get': {
+                method: 'Get'
+            }
         })
     };
 }]);

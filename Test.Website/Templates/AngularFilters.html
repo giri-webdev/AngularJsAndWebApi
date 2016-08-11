@@ -1,7 +1,19 @@
-﻿<div>
-    <label>Upper Case Filter: </label>{{message | uppercase}} <br/>
-    <label>Lower Case Filter: </label>{{message | lowercase}} <br/>
+﻿<div  ng-controller="AngularFilterController">
+    <label>Upper Case Filter: </label>{{fruit | uppercase}} <br/>
+    <label>Lower Case Filter: </label>{{fruit | lowercase}} <br/>
     <label>Date Filter: </label>{{date | date}}<br/>
+
+    <button ng-click="loadPartial('1')">Heloo</button>
+
+    <div ng-repeat="converter in converters">
+        <h4 class="text text-success">{{converter.title}}</h4><br/>
+        <a ng-repeat="item in converter.values" ng-click="loadPartial($event)" 
+           data-url="{{converter.url[$index]}}" href="#" style="display:block;">{{item}}</a><br/>
+    </div>
+
+    <div ng-include src="partial">
+        
+    </div>
 </div>
 
 
