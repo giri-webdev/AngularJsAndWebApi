@@ -19,7 +19,7 @@ namespace ServiceLayer.Controllers
         uncomment the below statement*/
         public ExceptionDemoController()
         {
-            //throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
         [Route("TestFilter")]

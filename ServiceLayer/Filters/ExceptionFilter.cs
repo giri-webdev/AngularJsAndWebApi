@@ -12,7 +12,6 @@ namespace ServiceLayer.Filters
          */ 
         public override void OnException(HttpActionExecutedContext actionExecutedContext)
         {
-            //log the exception
             actionExecutedContext.Response = new HttpResponseMessage(HttpStatusCode.InternalServerError)
             {
                 Content=new StringContent("Server error occurred.")

@@ -20,9 +20,7 @@ namespace ServiceLayer.Filters
                 ReasonPhrase = "Internal server error"
             };
             response.Headers.Add("gp-error", "server exception");
-
             context.Result = new ResponseMessageResult(response);
-
         }
 
         public override bool ShouldHandle(ExceptionHandlerContext context)
