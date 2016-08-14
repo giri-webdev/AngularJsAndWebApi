@@ -1,0 +1,128 @@
+*Error Occurred on  8/14/2016 9:24:08 PM :-*
+
+Exception Type:- 
+System.IO.FileNotFoundException
+Exception:- 
+Unable to find the specified file.
+Source:- 
+
+Stack Trace:- 
+   at ServiceLayer.Controllers.ExceptionDemoController.TestExceptionFilter() in H:\WebAPI\WebAPI\ServiceLayer\Controllers\ExceptionDemoController.cs:line 29
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+*Error Occurred on  8/14/2016 9:25:27 PM :-*
+
+Exception Type:- 
+System.IO.FileNotFoundException
+Exception:- 
+Unable to find the specified file.
+Source:- 
+
+Stack Trace:- 
+   at ServiceLayer.Controllers.ExceptionDemoController.TestExceptionFilter() in H:\WebAPI\WebAPI\ServiceLayer\Controllers\ExceptionDemoController.cs:line 29
+   at lambda_method(Closure , Object , Object[] )
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.<>c__DisplayClass10.<GetExecutor>b__9(Object instance, Object[] methodParameters)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ActionExecutor.Execute(Object instance, Object[] arguments)
+   at System.Web.Http.Controllers.ReflectedHttpActionDescriptor.ExecuteAsync(HttpControllerContext controllerContext, IDictionary`2 arguments, CancellationToken cancellationToken)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ApiControllerActionInvoker.<InvokeActionAsyncCore>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ActionFilterResult.<ExecuteAsync>d__2.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.AuthenticationFilterResult.<ExecuteAsync>d__0.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at System.Web.Http.Controllers.ExceptionFilterResult.<ExecuteAsync>d__0.MoveNext()
+
+*Error Occurred on  8/14/2016 9:28:53 PM :-*
+
+Inner Exception Type:- System.NotImplementedException
+Inner Exception:- 
+The method or operation is not implemented.
+Inner Source:- 
+ServiceLayer
+Inner Stack Trace:- 
+   at ServiceLayer.Controllers.ExceptionDemoController..ctor() in H:\WebAPI\WebAPI\ServiceLayer\Controllers\ExceptionDemoController.cs:line 22
+   at lambda_method(Closure )
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+Exception Type:- 
+System.InvalidOperationException
+Exception:- 
+An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+Source:- 
+
+Stack Trace:- 
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+*Error Occurred on  8/14/2016 9:29:50 PM :-*
+
+Inner Exception Type:- System.NotImplementedException
+Inner Exception:- 
+The method or operation is not implemented.
+Inner Source:- 
+ServiceLayer
+Inner Stack Trace:- 
+   at ServiceLayer.Controllers.ExceptionDemoController..ctor() in H:\WebAPI\WebAPI\ServiceLayer\Controllers\ExceptionDemoController.cs:line 22
+   at lambda_method(Closure )
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+Exception Type:- 
+System.InvalidOperationException
+Exception:- 
+An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+Source:- 
+
+Stack Trace:- 
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+*Error Occurred on  8/14/2016 9:32:04 PM :-*
+
+Inner Exception Type:- System.NotImplementedException
+Inner Exception:- 
+The method or operation is not implemented.
+Inner Source:- 
+ServiceLayer
+Inner Stack Trace:- 
+   at ServiceLayer.Controllers.ExceptionDemoController..ctor() in H:\WebAPI\WebAPI\ServiceLayer\Controllers\ExceptionDemoController.cs:line 22
+   at lambda_method(Closure )
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+Exception Type:- 
+System.InvalidOperationException
+Exception:- 
+An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+Source:- 
+
+Stack Trace:- 
+   at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
