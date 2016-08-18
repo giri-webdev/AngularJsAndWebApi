@@ -9,19 +9,11 @@ app.controller('ContactUsController', function ($scope, $routeParams,apiservice)
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
 
-    //$.get('http://localhost:55626/api/Values/HtmlContent', function (data) {
-    //    alert(data);
-    //    $('#htmlContent').html(data);
-    //    console.log(data);
-    //    $scope.htmlContent = 'hello';
-    //});
-
-    //apiservice.htmlContent.get(function (data) {
-    //    console.log(data);
-    //    $scope.htmlContent = data;
-    //});
+    //Get the html content from web api service
+    apiservice.htmlContent.get(function (data) {
+        $scope.htmlContent = data.html;
+    });
 });
-
 
 app.controller('AngularFilterController', function ($scope) {
     $scope.fruit = "Orange";

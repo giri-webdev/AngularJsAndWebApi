@@ -1,4 +1,5 @@
-﻿using ServiceLayer.CustomAttributes;
+﻿using ServiceLayer.Common;
+using ServiceLayer.CustomAttributes;
 using ServiceLayer.Models;
 using System.Collections.Generic;
 using System.Linq;
@@ -47,12 +48,9 @@ namespace ServiceLayer.Controllers
         [HttpGet]
         [Route("HtmlContent")]
         [AllowAnonymous]
-        public HttpResponseMessage HtmlContent()
+        public IHttpActionResult HtmlContent()
         {
-            var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent("<span style='color:red;'>Hello World</span>");
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
-            return response;
+            return new HTMLResult("<h1>Hello World</h1>",Request);
         }
 
         // POST api/values

@@ -27,7 +27,11 @@
         }),
         htmlContent: $resource('http://localhost:55626/api/Values/HtmlContent', null, {
             'get': {
-                method: 'Get'
+                method: 'Get',
+                headers: { 'Accept': 'text/html, application/json, text/plain, */*' },
+                transformResponse: function (response) {
+                    return { html: response };
+                }
             }
         })
     };
