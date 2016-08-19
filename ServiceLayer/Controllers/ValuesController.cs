@@ -50,7 +50,7 @@ namespace ServiceLayer.Controllers
         [AllowAnonymous]
         public IHttpActionResult HtmlContent()
         {
-            return new HTMLResult("<h1>Hello World</h1>",Request);
+            return new HTMLResult("<h1 style='color:red'>Hello World</h1>",Request);
         }
 
         // POST api/values

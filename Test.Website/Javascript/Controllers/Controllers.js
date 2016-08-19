@@ -5,7 +5,7 @@ app.controller('AboutController', function ($scope, $routeParams, info) {
     $scope.info = info;
 });
 
-app.controller('ContactUsController', function ($scope, $routeParams,apiservice) {
+app.controller('ContactUsController', function ($scope, $routeParams,apiservice,$sce) {
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
 
@@ -13,6 +13,11 @@ app.controller('ContactUsController', function ($scope, $routeParams,apiservice)
     apiservice.htmlContent.get(function (data) {
         $scope.htmlContent = data.html;
     });
+
+    $scope.renderHtml=function(html)
+    {
+        return $sce.trustAsHtml(html);
+    }
 });
 
 app.controller('AngularFilterController', function ($scope) {
