@@ -3,6 +3,7 @@ using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
 using ServiceLayer.Filters;
 using System.Web.Http.ExceptionHandling;
+using ServiceLayer.Common;
 
 namespace ServiceLayer
 {
@@ -14,6 +15,8 @@ namespace ServiceLayer
             // Configure Web API to use only bearer token authentication.
             config.SuppressDefaultHostAuthentication();
             config.Filters.Add(new HostAuthenticationFilter(OAuthDefaults.AuthenticationType));
+            config.MessageHandlers.Add(new CustomResponseHeader());
+            //config.MessageHandlers.Add(new ValidateErrorHandelr());
 
             //Add ExceptionFilter, ExceptionLogger and ExceptionHandler
             config.Filters.Add(new ExceptionFilter());

@@ -67,17 +67,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\style.css" />
-    <Content Include="Javascript\InterceptorDemo.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
+    <Content Include="Templates\About.html" />
     <Content Include="Templates\AddProduct.html" />
     <Content Include="codes.txt" />
     <Content Include="Javascript\app.js" />
-    <Content Include="Javascript\Controllers\AddProductController.js" />
     <Content Include="Javascript\Controllers\Controllers.js" />
-    <Content Include="Javascript\Controllers\LoginController.js" />
     <Content Include="Javascript\Providers\routeprovider.js" />
     <Content Include="Javascript\Services\apiservice.js" />
     <Content Include="Templates\AngularFilters.html" />
+    <Content Include="Templates\Country.html" />
     <Content Include="Templates\Login.html" />
     <Content Include="packages.config" />
     <Content Include="Scripts\version.json" />
@@ -875,12 +874,29 @@
     <Content Include="Scripts\i18n\angular-locale_zh.js" />
     <Content Include="Scripts\i18n\angular-locale_zu-za.js" />
     <Content Include="Scripts\i18n\angular-locale_zu.js" />
-    <Content Include="Templates\About.html" />
+    <Content Include="Templates\ListCountries.html" />
     <Content Include="Templates\ContactUs.html" />
+    <Content Include="Templates\Page1.aspx" />
+    <Content Include="Templates\Page2.aspx" />
+    <Content Include="Templates\Register.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Templates\Page1.aspx.cs">
+      <DependentUpon>Page1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Page1.aspx.designer.cs">
+      <DependentUpon>Page1.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\Page2.aspx.cs">
+      <DependentUpon>Page2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Templates\Page2.aspx.designer.cs">
+      <DependentUpon>Page2.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup>

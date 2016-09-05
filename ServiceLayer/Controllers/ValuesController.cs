@@ -1,9 +1,11 @@
-﻿using ServiceLayer.CustomAttributes;
+﻿using ServiceLayer.Common;
+using ServiceLayer.CustomAttributes;
 using ServiceLayer.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Net.Http.Formatting;
 using System.Net.Http.Headers;
 using System.Security.Claims;
 using System.Web.Http;
@@ -31,9 +33,14 @@ namespace ServiceLayer.Controllers
         [AllowAnonymous]
         public IQueryable<ProductModel> GetProducts(string name=null)
         {
-
-
            return Products().AsQueryable();
+        }
+
+        [HttpGet]
+        [Route("GetCountries")]
+        public IQueryable<ProductModel> GetCountries()
+        {
+            return Countries().AsQueryable();
         }
 
 
@@ -44,14 +51,15 @@ namespace ServiceLayer.Controllers
             return NotFound();
         }
 
+
+        //Html content media type formatter example
         [HttpGet]
         [Route("HtmlContent")]
         [AllowAnonymous]
         public HttpResponseMessage HtmlContent()
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK);
-            response.Content = new StringContent("<span style='color:red;'>Hello World</span>");
-            response.Content.Headers.ContentType = new MediaTypeHeaderValue("text/html");
+            response.Content = new ObjectContent<string>("<span style='color:red;'>Hello World</span>",new HTMLFormatter());
             return response;
         }
 
@@ -100,5 +108,34 @@ namespace ServiceLayer.Controllers
 
             return products;
         }
+
+        private List<ProductModel> Countries()
+        {
+            List<ProductModel> countries = new List<ProductModel>();
+
+            countries.Add(new ProductModel { Id = 1, Name = "India" });
+            countries.Add(new ProductModel { Id = 2, Name = "U.S.A" });
+            countries.Add(new ProductModel { Id = 3, Name = "France" });
+            countries.Add(new ProductModel { Id = 4, Name = "Australia" });
+            countries.Add(new ProductModel { Id = 5, Name = "Japan" });
+
+            return countries;
+        }
+
+
+        //Content Negotiation Example
+        public HttpResponseMessage ContentNegotiationExample()
+        {
+            HttpResponseMessage response = new HttpResponseMessage();
+            IContentNegotiator defaultNegotiator = this.Configuration.Services.GetContentNegotiator();
+            ContentNegotiationResult negotiationResult = defaultNegotiator.Negotiate(typeof(string), this.Request,
+                this.Configuration.Formatters);
+
+            response.Content = new ObjectContent<string>("Hello Giri!", negotiationResult.Formatter, negotiationResult.MediaType);
+            return response;
+        }
+        
+        
+         
     }
 }

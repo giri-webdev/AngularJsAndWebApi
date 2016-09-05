@@ -37,9 +37,13 @@
         controller:'AngularFilterController'
     })
 
-    .when('/Login', {
-        templateUrl:'Templates/Login.html',
-        controller:'LoginController'
+    .when('/Register', {
+        templateUrl: 'Templates/Register.html',
+        controller:'RegisterController'
+    })
+    .when('/Country', {
+        templateUrl:'Templates/Country.html',
+        controller:'CountryController'
     })
 
     .otherwise(
@@ -48,8 +52,6 @@
     });
 
     $locationProvider.html5Mode(true);
-
-
 }]);
 
 //Show the progress bar while loading the view through routing
@@ -62,3 +64,34 @@ app.run(['$rootScope', function ($root) {
         $('#pIndicator').hide();
     });
 }]);
+
+/*Http Interceptors to show the progress bar 
+while making $resource service request*/
+app.config(function ($provide, $httpProvider) {
+
+    $provide.factory('httpInterceptor', ['$q', '$location', function ($q, $location) {
+        return {
+
+            request: function (config) {
+                $('#pIndicator').show();
+                return config;
+            },
+            requestError: function (error) {
+                $('#pIndicator').hide();
+                return $q.reject(error);
+            },
+
+            response: function (response) {
+                $('#pIndicator').hide();
+                return response;
+            },
+            responseError: function (error) {
+                if (error.status == 401)
+                    $location.path('/Login');
+                return $q.reject(error);
+            }
+        }
+    }]);
+
+    $httpProvider.interceptors.push('httpInterceptor');
+});
