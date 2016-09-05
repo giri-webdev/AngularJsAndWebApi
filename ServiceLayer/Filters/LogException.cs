@@ -1,8 +1,12 @@
-﻿using System;
+﻿using NLog;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web;
 using System.Web.Configuration;
 using System.Web.Http.ExceptionHandling;
@@ -71,7 +75,29 @@ namespace ServiceLayer.Filters
             { }
         }
 
- 
+        public override Task LogAsync(ExceptionLoggerContext context, CancellationToken cancellationToken)
+        {
+            //return base.LogAsync(context, cancellationToken);
+
+            Exception exc = context.ExceptionContext.Exception;
+            if (exc != null)
+            {
+                StringBuilder builder = new StringBuilder();
+                builder.AppendLine("\n\n*******************************");
+                builder.AppendLine("\nException type:- " + exc.InnerException.GetType().ToString());
+                builder.AppendLine("\nException:- " + exc.Message);
+                if(exc.StackTrace != null)
+                {
+                    builder.AppendLine("\nStack Trace:- " + exc.StackTrace);
+                }
+               
+                Logger logger = LogManager.GetLogger("LogException");
+                logger.Log(LogLevel.Error,builder);
+            }
+            return Task.FromResult(0);
+        }
+
+
 
         public static void SendEmail(Exception exc, string source)
         {

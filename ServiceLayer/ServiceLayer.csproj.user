@@ -8,7 +8,11 @@
     <WebStackScaffolding_IsReferencingScriptLibrariesSelected>True</WebStackScaffolding_IsReferencingScriptLibrariesSelected>
     <WebStackScaffolding_LayoutPageFile />
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
+<<<<<<< HEAD
     <ProjectView>ShowAllFiles</ProjectView>
+=======
+    <ProjectView>ProjectFiles</ProjectView>
+>>>>>>> 7cdce1361745412c776bbfe5a3ceb3b316b57e81
   </PropertyGroup>
   <ProjectExtensions>
     <VisualStudio>

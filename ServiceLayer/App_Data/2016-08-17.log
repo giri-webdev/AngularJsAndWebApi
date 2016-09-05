@@ -1,0 +1,115 @@
+2016-08-17 10:52:29.7960 ERROR An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+2016-08-17 11:05:15.6488 ERROR Exception type:- System.NotImplementedException
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+2016-08-17 11:08:41.6276 ERROR 
+
+**************Exception*****************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+***************End of exception************
+
+2016-08-17 11:10:10.9207 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+***************End of exception************
+
+2016-08-17 11:11:53.4496 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+
+
+2016-08-17 11:12:12.9807 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+
+
+
+2016-08-17 11:13:12.6891 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+2016-08-17 11:13:47.7781 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+2016-08-17 11:14:13.5716 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+
+2016-08-17 12:43:22.5427 ERROR 
+
+*******************************
+
+Exception type:- System.NotImplementedException
+
+Exception:- An error occurred when trying to create a controller of type 'ExceptionDemoController'. Make sure that the controller has a parameterless public constructor.
+
+Stack Trace:-    at System.Web.Http.Dispatcher.DefaultHttpControllerActivator.Create(HttpRequestMessage request, HttpControllerDescriptor controllerDescriptor, Type controllerType)
+   at System.Web.Http.Controllers.HttpControllerDescriptor.CreateController(HttpRequestMessage request)
+   at System.Web.Http.Dispatcher.HttpControllerDispatcher.<SendAsync>d__1.MoveNext()
+

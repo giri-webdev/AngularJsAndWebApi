@@ -10,8 +10,17 @@ app.controller('AboutController', function ($scope, $routeParams, info) {
 app.controller('ContactUsController', function ($scope, $routeParams) {
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
-});
 
+    //Get the html content from web api service
+    apiservice.htmlContent.get(function (data) {
+        $scope.htmlContent = data.html;
+    });
+
+    $scope.renderHtml=function(html)
+    {
+        return $sce.trustAsHtml(html);
+    }
+});
 
 app.controller('AngularFilterController', function ($scope) {
     $scope.fruit = "Orange";
@@ -21,7 +30,7 @@ app.controller('AngularFilterController', function ($scope) {
 app.controller('AddProductController', function ($scope, $resource) {
     $scope.categories = [{ id: 1, text: 'Fruits' },
         { id: 2, text: 'Devices' }];
-
+ 
     $scope.product = {
         name: '',
         item: { id: 2, text: 'Devices' }

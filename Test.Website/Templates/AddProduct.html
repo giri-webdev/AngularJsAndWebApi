@@ -14,9 +14,8 @@
             <div class="col-md-9">
                 <select name="category" Style="width:200px;" id="category"  class="form-control" ng-model="product.item"
                         ng-options="item as item.text for item in categories track by item.id" >
-
                 </select>
-            
+
                 <span class="help-block" ng-show="productForm.category.$error.required && productForm.category.$dirty">Category is required</span>
                 <br />
                 <button class="btn btn-primary text-center" ng-disabled="productForm.$invalid" ng-click="saveProduct()">Save</button>
