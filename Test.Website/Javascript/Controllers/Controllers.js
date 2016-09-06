@@ -7,7 +7,7 @@ app.controller('AboutController', function ($scope, $routeParams, info) {
     $scope.info = info;
 });
 
-app.controller('ContactUsController', function ($scope, $routeParams) {
+app.controller('ContactUsController', function ($scope, $routeParams,apiservice,$sce) {
     $scope.message = "Contact Us Page";
     $scope.index = $routeParams.id;
 
@@ -27,7 +27,7 @@ app.controller('AngularFilterController', function ($scope) {
     $scope.date = new Date();
 });
 
-app.controller('AddProductController', function ($scope, $resource) {
+app.controller('AddProductController', function ($scope, $resource,apiservice) {
     $scope.categories = [{ id: 1, text: 'Fruits' },
         { id: 2, text: 'Devices' }];
  
@@ -36,10 +36,9 @@ app.controller('AddProductController', function ($scope, $resource) {
         item: { id: 2, text: 'Devices' }
     };
 
-    var p = $resource('http://localhost:55626/api/Values/AddProduct');
-
     $scope.saveProduct = function () {
-        p.save($scope.product, function (data) {
+        
+        apiservice.addProduct.save($scope.product, function (data) {
             alert('Product saved successfully.')
         }, function (response) {//Exception Handling
             alert(response.statusText)
@@ -57,18 +56,12 @@ app.controller('CountryController', function ($scope, apiservice) {
 });
 
 
-app.controller('ListCountriesController', function ($scope, apiservice,$resource) {
-    var ds = $resource('http://localhost:55626/api/Values/GetCountries', null, {
-        'list': {
-            method: 'Get',
-            headers: { 'Authorization': 'Bearer ' + token },
-            isArray: true
-        }
-    });
-       
-    ds.list(function (data) {
+app.controller('ListCountriesController', function ($scope, apiservice, $resource) {
+
+    apiservice.getCountries.list(function (data) {
         $scope.info = data;
     });
+  
 });
 
 

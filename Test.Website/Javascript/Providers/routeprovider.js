@@ -74,6 +74,10 @@ app.config(function ($provide, $httpProvider) {
 
             request: function (config) {
                 $('#pIndicator').show();
+
+                if (config.headers.Authorization === 'Bearer')
+                    config.headers.Authorization = 'Bearer ' + token;
+
                 return config;
             },
             requestError: function (error) {

@@ -56,7 +56,7 @@ namespace ServiceLayer.Controllers
         [HttpGet]
         [Route("HtmlContent")]
         [AllowAnonymous]
-        public IHttpActionResult HtmlContent()
+        public HttpResponseMessage HtmlContent()
         {
             var response = new HttpResponseMessage(HttpStatusCode.OK);
             response.Content = new ObjectContent<string>("<span style='color:red;'>Hello World</span>",new HTMLFormatter());
