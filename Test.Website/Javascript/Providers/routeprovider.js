@@ -46,6 +46,11 @@
         controller:'CountryController'
     })
 
+    .when('/Login', {
+        templateUrl: 'Templates/Login.html',
+        controller:'LoginController'
+    })
+
     .otherwise(
     {
         redirectTo: '/About'
@@ -67,35 +72,40 @@ app.run(['$rootScope', function ($root) {
 
 /*Http Interceptors to show the progress bar 
 while making $resource service request*/
-app.config(function ($provide, $httpProvider) {
 
-    $provide.factory('httpInterceptor', ['$q', '$location', function ($q, $location) {
-        return {
+app.factory('httpInterceptor', ['$q', '$location', '$window', function ($q, $location, $window) {
+    return {
 
-            request: function (config) {
-                $('#pIndicator').show();
+        request: function (config) {
+            $('#pIndicator').show();
 
-                if (config.headers.Authorization === 'Bearer')
-                    config.headers.Authorization = 'Bearer ' + token;
+            if (config.headers.Authorization === 'Bearer')
+                config.headers.Authorization = 'Bearer ' + $window.sessionStorage.getItem('token');
 
-                return config;
-            },
-            requestError: function (error) {
-                $('#pIndicator').hide();
-                return $q.reject(error);
-            },
+            return config;
+        },
+        requestError: function (error) {
+            $('#pIndicator').hide();
+            return $q.reject(error);
+        },
 
-            response: function (response) {
-                $('#pIndicator').hide();
-                return response;
-            },
-            responseError: function (error) {
-                if (error.status == 401)
-                    $location.path('/Login');
-                return $q.reject(error);
+        response: function (response) {
+            $('#pIndicator').hide();
+            return response;
+        },
+        responseError: function (error) {
+
+            if (error.status == 401) {
+                $location.path("/Login");
             }
+            return $q.reject(error);
         }
-    }]);
+    }
+
+
+}]);
+
+app.config(['$httpProvider', function ($httpProvider) {
 
     $httpProvider.interceptors.push('httpInterceptor');
-});
+}]);

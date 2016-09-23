@@ -1,6 +1,4 @@
-﻿var token = null;
-var isValidUser = false;
-//Get the ajax call data from reslove and promise through 'info' object
+﻿//Get the ajax call data from reslove and promise through 'info' object
 app.controller('AboutController', function ($scope, $routeParams, info) {
     $scope.message = "About Page";
     $scope.index = $routeParams.id;
@@ -49,45 +47,41 @@ app.controller('AddProductController', function ($scope, $resource,apiservice) {
 });
 
 app.controller('CountryController', function ($scope, apiservice) {
-    $scope.template = "Templates/Login.html";
-    if (isValidUser) {
-        $scope.template = "Templates/ListCountries.html";
-    }
+  $scope.template = "Templates/ListCountries.html";
 });
 
 
-app.controller('ListCountriesController', function ($scope, apiservice, $resource) {
+app.controller('ListCountriesController',['$scope', 'apiservice', '$resource','$location', function ($scope, apiservice, $resource,$location) {
 
     apiservice.getCountries.list(function (data) {
         $scope.info = data;
     });
-  
-});
+
+    }]);
 
 
-app.controller('RegisterController', function ($scope, apiservice,$location) {
+app.controller('RegisterController', function ($scope, apiservice, $location) {
     $scope.userModel = {
         email: '',
         password: '',
-        confirmPassword:''
+    confirmPassword: ''
     };
 
-    $scope.register = function () {
-        apiservice.register.addUser($scope.userModel, function (data) {
-            $location.path('/ListCountries');
+$scope.register = function () {
+    apiservice.register.addUser($scope.userModel, function (data) {
+        $location.path('/ListCountries');
         });
     };
 });
 
 
-app.controller('LoginController', function ($scope, apiservice,$location) {
+app.controller('LoginController', function ($scope,$window, apiservice,$location) {
 
     $scope.login = function () {
         $scope.userModel.grant_type = 'password';
         $scope.userModel.userName = $scope.userModel.email;
         apiservice.login.validateUser($scope.userModel, function (data) {
-            isValidUser = true;
-            token = data.access_token;
+            $window.sessionStorage.setItem('token', data.access_token);
             $scope.info = 'User authenticated successfully..';
             $location.path('/Country');
         });
