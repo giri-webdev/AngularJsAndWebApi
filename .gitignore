@@ -9,3 +9,6 @@
 /packages
 /Test.Website/bin
 /Test.Website/obj/Debug
+/ServiceLayer/obj/Release
+/ServiceLayer/Properties/PublishProfiles
+/Test.Website/obj/Release
