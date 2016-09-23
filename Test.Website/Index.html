@@ -1,26 +1,23 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Angular Js Example</title>
 	<meta charset="utf-8" />
     <base href="/">  
     <script src="Scripts/jquery-2.2.0.js"></script>
     <script src="Scripts/angular.js"></script>
     <script src="Scripts/angular-route.js"></script>
-    <script src="Scripts/angular-resource.js"></script>  
+    <script src="Scripts/angular-resource.js"></script>    
     <script src="Scripts/angular-sanitize.js"></script>
     <script src="Javascript/app.js"></script>
     <script src="Javascript/Providers/routeprovider.js"></script>
     <script src="Javascript/Services/apiservice.js"></script>
-    <script src="Javascript/Controllers/AddProductController.js"></script>
     <script src="Javascript/Controllers/Controllers.js"></script>
-    <script src="Javascript/Controllers/LoginController.js"></script>
     <link href="Content/bootstrap.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
  
     <style type="text/css">
-        #pIndicator
-        {
+        #pIndicator {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -28,12 +25,13 @@
     margin-left: -50px;
     width: 100px;
     height: 100px;
-}​
+            color:green;
+        }
     </style>
 
 </head>
 <body ng-app="angularDemo">
-    <div id="pIndicator">
+    <div style="display:none;" id="pIndicator">
         <div>Loading...</div>
     </div>
     <div class="container">
@@ -44,6 +42,7 @@
                     <li><a href="ContactUs/2">Contact Us(PartialViews Demo)</a></li>
                     <li><a href="AddProduct">Add Product(Form Validation)</a></li>
                     <li><a href="AngularFilters">Angular Filters</a></li>
+                    <li><a href="Country">List Countries(Authentication)</a></li>
                 </ul>
             </div>
             <div class="col-md-9">
@@ -51,8 +50,6 @@
             </div>
         </div>
     </div>
-    <script src="Javascript/InterceptorDemo.js"></script>
+    
 </body>
 </html>
-
-

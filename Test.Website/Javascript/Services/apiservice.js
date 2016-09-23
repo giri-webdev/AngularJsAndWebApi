@@ -19,10 +19,18 @@
                 }
             }
         }),
+        getCountries: $resource('http://localhost:55626/api/Values/GetCountries',null,{
+            'list': {
+                method: 'Get',
+                headers: { 'Authorization': 'Bearer' },
+                isArray:true
+            }
+        }),
+            
         listProducts: $resource('http://localhost:55626/api/Values/GetProducts', null, {
             'list': {
                 method: 'Get',
-                headers: { 'Authorization': 'Bearer ' + token }
+                headers: { 'Authorization': 'Bearer'}
             }
         }),
         htmlContent: $resource('http://localhost:55626/api/Values/HtmlContent', null, {
@@ -33,6 +41,7 @@
                     return { html: response };
                 }
             }
-        })
+        }),
+        addProduct: $resource('http://localhost:55626/api/Values/AddProduct')
     };
 }]);
