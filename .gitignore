@@ -10,3 +10,4 @@
 /WebAPIService/obj/Release
 /WebAPIService/Properties/PublishProfiles
 /AngularJsClient/obj/Release
+*.user
