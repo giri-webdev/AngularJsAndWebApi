@@ -2,13 +2,11 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/ServiceLayer/obj/Debug
-/WebApplication1/bin
-/WebApplication1/obj/Debug
-/ServiceLayer/bin
+/WebAPIService/obj/Debug
+/WebAPIService/bin
 /packages
-/Test.Website/bin
-/Test.Website/obj/Debug
-/ServiceLayer/obj/Release
-/ServiceLayer/Properties/PublishProfiles
-/Test.Website/obj/Release
+/AngularJsClient/bin
+/AngularJsClient/obj/Debug
+/WebAPIService/obj/Release
+/WebAPIService/Properties/PublishProfiles
+/AngularJsClient/obj/Release
