@@ -1,59 +1,12 @@
 ﻿app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
-
-    /*Get the data from the ajax call before loading the view using
-      resolve property from the routeprovider and promise
-    */
-    $routeProvider.when('/About/:id', {
-        templateUrl: 'Templates/About.html',
-        controller: 'AboutController',
-        resolve: {
-            info: function ($q, $http) {
-                var deferred = $q.defer();
-
-                $http({ method: 'GET', url: 'http://localhost:55626/api/Values/GetProducts' })
-                    .success(function (data) {
-                        deferred.resolve(data)
-                    })
-                    .error(function (data) {
-
-                        deferred.resolve("Error occurred.");
-                    });
-
-                return deferred.promise;
-            }
-        }
+    $routeProvider
+    .when('/Products', {
+        templateUrl: 'Templates/Products.html',
+        controller: 'ProductsController'
     })
-    .when('/ContactUs/:id', {
-        templateUrl: 'Templates/ContactUs.html',
-        controller: 'ContactUsController'
-    })
-    .when('/AddProduct', {
-        templateUrl: 'Templates/AddProduct.html',
-        controller:'AddProductController'
-    })
-
-    .when('/AngularFilters', {
-        templateUrl: 'Templates/AngularFilters.html',
-        controller:'AngularFilterController'
-    })
-
-    .when('/Register', {
-        templateUrl: 'Templates/Register.html',
-        controller:'RegisterController'
-    })
-    .when('/Country', {
-        templateUrl:'Templates/Country.html',
-        controller:'CountryController'
-    })
-
-    .when('/Login', {
-        templateUrl: 'Templates/Login.html',
-        controller:'LoginController'
-    })
-
     .otherwise(
     {
-        redirectTo: '/About'
+        redirectTo: '/Products'
     });
 
     $locationProvider.html5Mode(true);
@@ -70,7 +23,7 @@ app.run(['$rootScope', function ($root) {
     });
 }]);
 
-/*Http Interceptors to show the progress bar 
+/*Http Interceptors to show the progress bar
 while making $resource service request*/
 
 app.factory('httpInterceptor', ['$q', '$location', '$window', function ($q, $location, $window) {

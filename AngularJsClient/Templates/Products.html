@@ -1,0 +1,17 @@
+﻿<div ng-repeat="category in products">
+    <div>
+        <h3 class="text-info">  {{category.name}}----{{category.description}} </h3>
+        <hr/>
+    </div>
+    <div ng-repeat="product in category.products" class="row">
+        <div class="col-md-12">
+            <h3 class="text-success">
+                {{product.name}}
+            </h3>
+            <h3>
+                {{product.price | currency}}
+            </h3>
+            <hr />
+        </div>
+    </div>
+</div>
