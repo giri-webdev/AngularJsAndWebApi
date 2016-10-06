@@ -241,13 +241,16 @@
       <SubType>Designer</SubType>
     </None>
     <Content Include="Notes.txt" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\angularjsservicesftp.pubxml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
