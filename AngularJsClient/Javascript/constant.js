@@ -3,6 +3,10 @@
 
 var url = {
     products:{
-        list: serviceUrl + 'api/Product/ListProducts'
-        }
+        list: serviceUrl + 'api/Product/ListProducts',
+        addToCart: serviceUrl+'api/Product/AddToCart'
+    },
+    cart: {
+        list:serviceUrl+'api/Cart/ListProducts'
+    }
 };

@@ -26,5 +26,13 @@ namespace ServiceLayer.Controllers
             List<CategoryViewModel> products = repository.ListProducts();
             return Ok(products);
         }
+
+        [HttpPost]
+        [Route("AddToCart")]
+        public IHttpActionResult AddToCart(CartViewModel cartViewModel)
+        {
+            bool result = repository.AddToCart(cartViewModel);
+            return Ok(result);
+        }
     }
 }

@@ -45,5 +45,24 @@ namespace ServiceLayer.Repositories
                 return products;
             }
         }
+
+        public bool AddToCart(CartViewModel viewModel)
+        {
+            using (SqlConnection conn = new SqlConnection(WebConfigurationManager.
+               ConnectionStrings["DataServerConnection"].ToString()))
+            {
+                conn.Open();
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Cart VALUES(@ProductID,@ISActive)",conn);
+                cmd.Parameters.AddWithValue("@ProductID", viewModel.ProductID);
+                cmd.Parameters.AddWithValue("@ISActive", viewModel.IsActive);
+               int result = cmd.ExecuteNonQuery();
+
+                if (result > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
     }
 }

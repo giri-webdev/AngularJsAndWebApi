@@ -4,6 +4,12 @@
         templateUrl: 'Templates/Products.html',
         controller: 'ProductsController'
     })
+
+    .when('/Cart', {
+        templateUrl: 'Templates/Cart.html',
+        controller:'CartController'
+    })
+
     .otherwise(
     {
         redirectTo: '/Products'
