@@ -10,7 +10,5 @@ namespace ServiceLayer.Repositories.Interfaces
    public interface IProductRepository
     {
         List<CategoryViewModel> ListProducts();
-
-        bool AddToCart(CartViewModel viewModel);
     }
 }

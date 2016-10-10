@@ -109,6 +109,7 @@
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
     <Content Include="Javascript\constant.js" />
+    <Content Include="Javascript\directives.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Properties\PublishProfiles\angularjswebapiweb.pubxml" />
@@ -121,8 +122,8 @@
     <Content Include="codes.txt" />
     <Content Include="Javascript\app.js" />
     <Content Include="Javascript\Controllers\Controllers.js" />
-    <Content Include="Javascript\Providers\routeprovider.js" />
-    <Content Include="Javascript\Services\apiservice.js" />
+    <Content Include="Javascript\routeprovider.js" />
+    <Content Include="Javascript\apiservice.js" />
     <Content Include="packages.config" />
     <Content Include="Scripts\version.json" />
     <Content Include="Scripts\errors.json" />
@@ -151,6 +152,8 @@
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Templates\Products.html" />
     <Content Include="Templates\Cart.html" />
+    <Content Include="Templates\Security\Login.html" />
+    <Content Include="Templates\Security\Register.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

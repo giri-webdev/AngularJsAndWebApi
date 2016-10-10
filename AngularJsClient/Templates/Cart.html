@@ -1,1 +1,24 @@
-﻿
+﻿<h3 class="text-primary">Shopping Cart</h3>
+<hr/>
+<div>
+    <div ng-repeat="item in items">
+        <div class="row">
+            <div class="col-md-1">
+                <input data-id="{{item.id}}" type="checkbox" />
+            </div>
+            <div class="col-md-2">
+                <h4 class="text-success">{{item.productName }}</h4>
+            </div>
+            <div class="col-md-2">
+                <h4 calculate-Price="{{item.unitPrice}}" class="text-danger">{{item.unitPrice | currency}}</h4>
+            </div>
+            <div class="col-md-3">
+                <h4 class="text-info">{{item.date}}</h4>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+        <hr />
+    </div>
+</div>
+
+<h3>Total Price <span class="text-danger" ng-bind="totalPrice | currency"></span></h3>

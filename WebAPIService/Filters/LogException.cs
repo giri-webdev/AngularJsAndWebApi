@@ -84,7 +84,10 @@ namespace ServiceLayer.Filters
             {
                 StringBuilder builder = new StringBuilder();
                 builder.AppendLine("\n\n*******************************");
+
+               if(exc.InnerException != null)
                 builder.AppendLine("\nException type:- " + exc.InnerException.GetType().ToString());
+
                 builder.AppendLine("\nException:- " + exc.Message);
                 if(exc.StackTrace != null)
                 {

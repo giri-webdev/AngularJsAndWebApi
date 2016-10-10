@@ -11,6 +11,7 @@ using System.Web.Http;
 namespace ServiceLayer.Controllers
 {
     [RoutePrefix("api/Cart")]
+    [Authorize]
     public class CartController : ApiController
     {
         private ICartRepository repository;
@@ -26,6 +27,14 @@ namespace ServiceLayer.Controllers
         {
             List<CartViewModel> list = repository.ListProducts();
             return Ok(list);
+        }
+
+        [HttpPost]
+        [Route("AddToCart")]
+        public IHttpActionResult AddToCart(CartViewModel cartViewModel)
+        {
+            bool result = repository.AddToCart(cartViewModel);
+            return Ok(result);
         }
     }
 }

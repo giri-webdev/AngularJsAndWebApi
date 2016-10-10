@@ -10,6 +10,16 @@
         controller:'CartController'
     })
 
+    .when('/Register', {
+        templateUrl: 'Templates/Security/Register.html',
+        controller: 'RegisterController'
+    })
+
+    .when('/Login', {
+        templateUrl: 'Templates/Security/Login.html',
+        controller:'LoginController'
+    })
+
     .otherwise(
     {
         redirectTo: '/Products'
@@ -68,3 +78,4 @@ app.config(['$httpProvider', function ($httpProvider) {
 
     $httpProvider.interceptors.push('httpInterceptor');
 }]);
+

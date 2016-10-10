@@ -9,5 +9,6 @@ namespace ServiceLayer.Repositories.Interfaces
     public interface ICartRepository
     {
         List<CartViewModel> ListProducts();
+        bool AddToCart(CartViewModel viewModel);
     }
 }

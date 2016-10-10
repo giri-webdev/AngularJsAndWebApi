@@ -4,9 +4,13 @@
 var url = {
     products:{
         list: serviceUrl + 'api/Product/ListProducts',
-        addToCart: serviceUrl+'api/Product/AddToCart'
+        addToCart: serviceUrl + 'api/Cart/AddToCart'
     },
     cart: {
         list:serviceUrl+'api/Cart/ListProducts'
+    },
+    authorize: {
+        login: serviceUrl + 'Token',
+        register: serviceUrl+'api/Account/Register'
     }
 };
