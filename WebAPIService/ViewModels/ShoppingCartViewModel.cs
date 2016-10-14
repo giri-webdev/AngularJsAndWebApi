@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 
 namespace ServiceLayer.ViewModels
 {
@@ -18,5 +15,7 @@ namespace ServiceLayer.ViewModels
         public decimal UnitPrice { get; set; }
 
         public DateTime Date { get; set; }
+
+        public string UserId { get; set; }
     }
 }

@@ -9,13 +9,16 @@
             <div class="col-md-2">
                 <h4 class="text-success">{{item.productName }}</h4>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-2 unitPrice">
                 <h4 calculate-Price="{{item.unitPrice}}" class="text-danger">{{item.unitPrice | currency}}</h4>
             </div>
             <div class="col-md-3">
-                <h4 class="text-info">{{item.date}}</h4>
+                <h4 class="text-info">{{item.date | date : "short"}}</h4>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-2">
+                <input type="button" ng-click="delete($event)" class="btn btn-danger" value="Delete" />
+            </div>
+            <div class="col-md-2"></div>
         </div>
         <hr />
     </div>

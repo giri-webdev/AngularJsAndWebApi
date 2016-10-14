@@ -1,9 +1,9 @@
-﻿using System.Web.Http;
-using Microsoft.Owin.Security.OAuth;
+﻿using Microsoft.Owin.Security.OAuth;
 using Newtonsoft.Json.Serialization;
-using ServiceLayer.Filters;
-using System.Web.Http.ExceptionHandling;
 using ServiceLayer.Common;
+using ServiceLayer.Filters;
+using System.Web.Http;
+using System.Web.Http.ExceptionHandling;
 
 namespace ServiceLayer
 {

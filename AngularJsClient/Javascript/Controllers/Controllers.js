@@ -32,6 +32,17 @@ app.controller('CartController', ['$scope','apiservice',function ($scope, apiser
     $scope.$on('updatePrice', function (evt, value) {
         $scope.totalPrice = parseFloat($scope.totalPrice) + parseFloat(value);
     });
+
+    $scope.delete=function ($event) {
+
+        var btn = $event.currentTarget;
+        var row = $(btn).closest('.row');
+        var unitPrice = $(row).find('.unitPrice').find('h4').text();
+        unitPrice = unitPrice.replace(/^\D+/g, '');
+        $scope.totalPrice = $scope.totalPrice - unitPrice;
+        $(row).remove();
+    };
+
 }]);
 
 app.controller('LoginController', function ($scope, apiservice, $location,$window) {
