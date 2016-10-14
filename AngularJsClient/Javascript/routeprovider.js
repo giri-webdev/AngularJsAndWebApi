@@ -67,6 +67,9 @@ app.factory('httpInterceptor', ['$q', '$location', '$window', function ($q, $loc
             if (error.status == 401) {
                 $location.path("/Login");
             }
+            else {
+                infoDialog(error.statusText, error.data.message);
+            }
             return $q.reject(error);
         }
     }
@@ -79,3 +82,21 @@ app.config(['$httpProvider', function ($httpProvider) {
     $httpProvider.interceptors.push('httpInterceptor');
 }]);
 
+
+function infoDialog(title,message) {
+    $("#infoDialog").dialog({
+        resizable: false,
+        height: "auto",
+        width: 400,
+        open: function () {
+            $(this).html(message);
+        },
+        title:title,
+        modal: true,
+        buttons: {
+            Ok: function () {
+                $(this).dialog("close");
+            }
+        }
+    });
+}

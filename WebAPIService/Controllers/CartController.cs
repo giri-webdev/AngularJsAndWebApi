@@ -12,7 +12,6 @@ namespace ServiceLayer.Controllers
     public class CartController : ApiController
     {
         private ICartRepository repository;
-        private string userID;
 
         public CartController()
         {
@@ -24,8 +23,7 @@ namespace ServiceLayer.Controllers
         [Route("ListProducts")]
         public IHttpActionResult ListProducts()
         {
-            userID = User.Identity.GetUserId();
-            List<CartViewModel> list = repository.ListProducts(userID);
+            List<CartViewModel> list = repository.ListProducts(User.Identity.GetUserId());
             return Ok(list);
         }
 
@@ -33,7 +31,7 @@ namespace ServiceLayer.Controllers
         [Route("AddToCart")]
         public IHttpActionResult AddToCart(CartViewModel cartViewModel)
         {
-            cartViewModel.UserId = userID;
+            cartViewModel.UserId = User.Identity.GetUserId();
             bool result = repository.AddToCart(cartViewModel);
             return Ok(result);
         }
